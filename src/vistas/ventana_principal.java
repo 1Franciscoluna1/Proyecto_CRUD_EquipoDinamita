@@ -755,7 +755,7 @@ public class ventana_principal extends javax.swing.JFrame {
 
     private void carritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carritoActionPerformed
         if(vtncarrito==null){
-            vtncarrito = new carrito(this,modeloTicket,total);
+            vtncarrito = new carrito(this,modeloTicket,total,ID_Compra);
         }
         vtncarrito.setVisible(true);
         this.setVisible(false);
@@ -850,8 +850,8 @@ public class ventana_principal extends javax.swing.JFrame {
           
             table_ticket.getColumnModel().getColumn(3).setMaxWidth(45);
         }
-        else
-            JOptionPane.showMessageDialog(this, "Ticket no se encuentra en la BD");
+     /*   else
+            JOptionPane.showMessageDialog(this, "Ticket no se encuentra en la BD");*/
         total = bd.obtener_total(ID_Compra);
         Lbltotal.setText("$"+total);
         bd.cerrar_conexion();

@@ -4,6 +4,7 @@
  */
 package basedatos;
 import logica.Articulo;
+import logica.Venta;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.DriverManager;
@@ -17,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class bd {
     Connection conexion;
-    PreparedStatement insertArt, ultimo_id, cant_art, cons_art, total, cons_tkt, cons_rep, upd_cant;
+    PreparedStatement insertArt, ultimo_id, cant_art, cons_art, total, cons_tkt, cons_rep, upd_cant,ins_vta;
     DefaultTableModel modeloTicket = new DefaultTableModel();
     
     
@@ -39,8 +40,9 @@ public class bd {
         cons_art = conexion.prepareStatement("SELECT * FROM `articulos` WHERE clave=?");
         cons_tkt = conexion.prepareStatement("Select * FROM compras WHERE numticket=?");
         total = conexion.prepareStatement("SELECT SUM(sub_total) FROM compras WHERE numticket = ?");
-        cons_rep = conexion.prepareStatement("SELECT * FROM compras WHERE cod_art=?");
+        cons_rep = conexion.prepareStatement("SELECT * FROM compras WHERE cod_art=? AND numticket=?");
         upd_cant = conexion.prepareStatement("UPDATE compras SET cantidad = ?, sub_total = ? WHERE cod_art = ?");
+        ins_vta = conexion.prepareStatement("INSERT INTO ventas values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         }catch(SQLException ex){
             System.out.println("Error al abrir la conexion de la BD");
         }
@@ -60,6 +62,7 @@ public class bd {
                 try{
                     
                     cons_rep.setInt(1, clve_art);
+                    cons_rep.setInt(2, art.getId());
                     rs = cons_rep.executeQuery();
                     
                     if(!rs.next()){
@@ -212,5 +215,24 @@ public class bd {
                         System.out.println(ex.getMessage());
                 }
                 return arti;
+            }
+            
+            public void insertar_vta(Venta vta){
+                try{
+                ins_vta.setInt(1,vta.getNum_tkt());
+                ins_vta.setBoolean(2, vta.isStatus());
+                ins_vta.setString(3, vta.getNombre());
+                ins_vta.setString(4, vta.getTelefono());
+                ins_vta.setString(5, vta.getCp());
+                ins_vta.setString(6,vta.getCorreo());
+                ins_vta.setString(7, vta.getDireccion());
+                ins_vta.setString(8,vta.getEstado());
+                ins_vta.setString(9,vta.getMetodo_pago());
+                
+                ins_vta.executeUpdate();
+                }catch(SQLException ex){
+                        System.out.println("Error al insertar una venta");
+                        System.out.println(ex.getMessage());
+                }
             }
 }
