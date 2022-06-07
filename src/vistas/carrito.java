@@ -10,20 +10,25 @@ package vistas;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
+import logica.Venta;
+import basedatos.bd;
 
 public class carrito extends javax.swing.JFrame {
 
     /**
      * Creates new form carrito
      */
-    
+    bd bd = null;
+    private int tkt;
     ventana_principal objvtnprin = null;
     
-    public carrito(ventana_principal obj,DefaultTableModel model_tkt,double total){
+    public carrito(ventana_principal obj,DefaultTableModel model_tkt,double total,int ticket){
         this.objvtnprin = obj;
+        bd = new bd();
         initComponents();
         jTable1.setModel(model_tkt);
         lbltotal.setText("Total a pagar: $"+total);
+        tkt = ticket;
     }
     
     public carrito() {
@@ -302,20 +307,66 @@ public class carrito extends javax.swing.JFrame {
     }//GEN-LAST:event_tarjetaActionPerformed
 
     private void confirmarcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarcActionPerformed
-      
-        if(nombre.getSize().width<3){
+        int opc=8;
+        Venta venta = new Venta();
+        String mtdo_pgo=null;
+        
+                if(tarjeta.isSelected()){
+                    mtdo_pgo="Tarjeta";
+                }else if(efectivo.isSelected()){
+                    mtdo_pgo="Efectivo";
+                }else if(oxxo.isSelected()){
+                    mtdo_pgo="Oxxo";
+                }else if(eleven.isSelected()){
+                    mtdo_pgo="7 Eleven";
+                }
+        
+        if(nombre.getText().length()<10){
             JOptionPane.showMessageDialog(this,"Nombre erroneo");}
-        if(telefono.getText()==""){
-            JOptionPane.showMessageDialog(this,"Telefono erroneo");}
-        if(correo.getText()==""){
-            JOptionPane.showMessageDialog(this,"Correo erroneo");}
-        if(cp.getText()==""){
-            JOptionPane.showMessageDialog(this, "Codigo Postal erroneo");}
-        if(direccion.getText()==""){
-            JOptionPane.showMessageDialog(this,"Direccion erroneo");}
+        else if(telefono.getText().length()<10){
+            JOptionPane.showMessageDialog(this,"Telefono erroneo");
+            }
+        else if(correo.getText().length()<9){
+            JOptionPane.showMessageDialog(this,"Correo erroneo");
+            }
+        else if(cp.getText().length()<3){
+            JOptionPane.showMessageDialog(this, "Codigo Postal erroneo");
+            }
+        else if(direccion.getText().length()<5){
+            JOptionPane.showMessageDialog(this,"Direccion erroneo");
+            }
+        else if(estado.getSelectedItem().toString()=="-"){
+            JOptionPane.showMessageDialog(this,"Selecciona un estado valido");
+            }
+        else if(mtdo_pgo==null){
+            JOptionPane.showMessageDialog(this,"Selecciona un metodo de pago");
+        }
+        else{
+            venta.setNum_tkt(tkt);
+            venta.setNombre(nombre.getText());
+            venta.setTelefono(telefono.getText());
+            venta.setCorreo(correo.getText());
+            venta.setCp(cp.getText());
+            venta.setDireccion(direccion.getText());
+            venta.setMetodo_pago(mtdo_pgo);
+            venta.setEstado("Jalisco");
+            venta.setStatus(true);
+            
+            String validacion=venta.mostrar_datos();
+            opc = JOptionPane.showConfirmDialog(this, "¿Sus datos estan bien?\n\n"+validacion, "Valide sus datos",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        }
+            if (opc == 0){
+            //Osea que preciono que los datos estan bien
+                bd.abrir_conexion();
+                bd.insertar_vta(venta);
+                bd.cerrar_conexion();
+                objvtnprin.ID_Compra++;
+                objvtnprin.setVisible(true);
+                this.dispose();
+                objvtnprin.ver_pedido();
+            }
         
-        //objvtnprin.ID_Compra++;
-        
+                this.limpiar_cajas();
         
         
     }//GEN-LAST:event_confirmarcActionPerformed
@@ -336,6 +387,7 @@ public class carrito extends javax.swing.JFrame {
         direccion.setText("");
         nombre.setText("");
         telefono.setText("");
+        estado.setSelectedIndex(0);
     }
     
     
