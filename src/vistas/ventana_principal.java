@@ -13,8 +13,7 @@ public class ventana_principal extends javax.swing.JFrame {
     bd bd = null;
     carrito vtncarrito = null;
     Articulo articulos = new Articulo();
-    int cont=0, ID_Compra;
-    double total=0;
+    int cont=0, ID_Compra ;
     String pedido="";
     DefaultTableModel modeloTicket=null;
     
@@ -25,7 +24,7 @@ public class ventana_principal extends javax.swing.JFrame {
         bd.abrir_conexion();
         crear_modelo_Ticket();
         table_ticket.setModel(modeloTicket);
-        ID_Compra = bd.obtener_ID();
+         ID_Compra = bd.obtener_ID();
         bd.cerrar_conexion();
         ver_pedido();
     }
@@ -41,13 +40,6 @@ public class ventana_principal extends javax.swing.JFrame {
 
         carrito = new javax.swing.JButton();
         opciones = new javax.swing.JTabbedPane();
-        ScrollPane_inicio = new javax.swing.JScrollPane();
-        inicio = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         ScrollPanequesos = new javax.swing.JScrollPane();
         Quesos = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -83,6 +75,13 @@ public class ventana_principal extends javax.swing.JFrame {
         bacc4 = new javax.swing.JButton();
         cbacc4 = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
+        ScrollPane_inicio = new javax.swing.JScrollPane();
+        inicio = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         ScrollPane_alacena = new javax.swing.JScrollPane();
         alacena = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -101,7 +100,7 @@ public class ventana_principal extends javax.swing.JFrame {
         ba4 = new javax.swing.JButton();
         cba4 = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
+        lblQuesabor = new javax.swing.JLabel();
         Lbltotal = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -113,7 +112,7 @@ public class ventana_principal extends javax.swing.JFrame {
         carrito.setBackground(new java.awt.Color(245, 242, 242));
         carrito.setFont(new java.awt.Font("Gill Sans MT Condensed", 0, 18)); // NOI18N
         carrito.setForeground(new java.awt.Color(102, 102, 0));
-        carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/compras.jpg"))); // NOI18N
+        carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras.jpg"))); // NOI18N
         carrito.setText("Shopping bag");
         carrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,66 +120,9 @@ public class ventana_principal extends javax.swing.JFrame {
             }
         });
 
-        inicio.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Myanmar Text", 1, 80)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel1.setText("QUE SABOR.");
-
-        jLabel2.setFont(new java.awt.Font("Myanmar Text", 3, 36)); // NOI18N
-        jLabel2.setText("De mazamitla a tu casa.");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/inicio.jpg"))); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Captura de pantalla 2022-05-22 184455.jpg"))); // NOI18N
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/a.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout inicioLayout = new javax.swing.GroupLayout(inicio);
-        inicio.setLayout(inicioLayout);
-        inicioLayout.setHorizontalGroup(
-            inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inicioLayout.createSequentialGroup()
-                .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(inicioLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(inicioLayout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(inicioLayout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel2))
-                    .addGroup(inicioLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        inicioLayout.setVerticalGroup(
-            inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inicioLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(39, 39, 39))
-        );
-
-        ScrollPane_inicio.setViewportView(inicio);
-
-        opciones.addTab("Inicio", ScrollPane_inicio);
-
         Quesos.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/1.jpg"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1.jpg"))); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 0));
@@ -195,7 +137,7 @@ public class ventana_principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/2.jpg"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/2.jpg"))); // NOI18N
 
         cbq1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
@@ -214,7 +156,7 @@ public class ventana_principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/3.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/3.jpg"))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(153, 153, 0));
@@ -231,7 +173,7 @@ public class ventana_principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/4.jpg"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/4.jpg"))); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 153, 0));
@@ -341,9 +283,9 @@ public class ventana_principal extends javax.swing.JFrame {
 
         accesorios.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/ACC.jpg"))); // NOI18N
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ACC.jpg"))); // NOI18N
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/8.jpg"))); // NOI18N
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/8.jpg"))); // NOI18N
 
         jLabel25.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(153, 153, 0));
@@ -473,15 +415,72 @@ public class ventana_principal extends javax.swing.JFrame {
 
         opciones.addTab("Accesorios", ScrollPaneaccesorios);
 
+        inicio.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Myanmar Text", 1, 80)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel1.setText("QUE SABOR.");
+
+        jLabel2.setFont(new java.awt.Font("Myanmar Text", 3, 36)); // NOI18N
+        jLabel2.setText("De mazamitla a tu casa.");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/inicio.jpg"))); // NOI18N
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Captura de pantalla 2022-05-22 184455.jpg"))); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/a.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout inicioLayout = new javax.swing.GroupLayout(inicio);
+        inicio.setLayout(inicioLayout);
+        inicioLayout.setHorizontalGroup(
+            inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inicioLayout.createSequentialGroup()
+                .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inicioLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inicioLayout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inicioLayout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(jLabel2))
+                    .addGroup(inicioLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        inicioLayout.setVerticalGroup(
+            inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inicioLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(39, 39, 39))
+        );
+
+        ScrollPane_inicio.setViewportView(inicio);
+
+        opciones.addTab("Inicio", ScrollPane_inicio);
+
         alacena.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/ala.jpg"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ala.jpg"))); // NOI18N
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/5.jpg"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/5.jpg"))); // NOI18N
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/6.jpg"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/6.jpg"))); // NOI18N
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/7.jpg"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/7.jpg"))); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(153, 153, 0));
@@ -592,7 +591,7 @@ public class ventana_principal extends javax.swing.JFrame {
                     .addGroup(alacenaLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jLabel16)
-                        .addGap(41, 41, 41)
+                        .addGap(27, 27, 27)
                         .addComponent(jLabel15)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel17))
@@ -632,9 +631,9 @@ public class ventana_principal extends javax.swing.JFrame {
 
         opciones.addTab("Alacena", ScrollPane_alacena);
 
-        jLabel29.setFont(new java.awt.Font("Myanmar Text", 1, 36)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel29.setText("QUE SABOR.");
+        lblQuesabor.setFont(new java.awt.Font("Myanmar Text", 1, 36)); // NOI18N
+        lblQuesabor.setForeground(new java.awt.Color(153, 153, 0));
+        lblQuesabor.setText("QUE SABOR.");
 
         Lbltotal.setBackground(new java.awt.Color(153, 153, 0));
         Lbltotal.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -678,7 +677,7 @@ public class ventana_principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblQuesabor, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -694,7 +693,6 @@ public class ventana_principal extends javax.swing.JFrame {
                                         .addGap(0, 183, Short.MAX_VALUE)))
                                 .addContainerGap())
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(carrito)
                                 .addGap(35, 35, 35))))))
         );
@@ -702,7 +700,7 @@ public class ventana_principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblQuesabor, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(12, 12, 12))
@@ -710,7 +708,7 @@ public class ventana_principal extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addComponent(carrito)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel30)
@@ -957,7 +955,6 @@ public class ventana_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
@@ -967,6 +964,7 @@ public class ventana_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblQuesabor;
     private javax.swing.JTabbedPane opciones;
     private javax.swing.JTable table_ticket;
     // End of variables declaration//GEN-END:variables
