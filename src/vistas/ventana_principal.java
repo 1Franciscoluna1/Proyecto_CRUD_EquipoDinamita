@@ -43,11 +43,11 @@ public class ventana_principal extends javax.swing.JFrame {
         ScrollPanequesos = new javax.swing.JScrollPane();
         Quesos = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        bq1 = new javax.swing.JButton();
+        lblQuesoSinLactosa = new javax.swing.JLabel();
+        lblPrecioQuesoSinLactosa = new javax.swing.JLabel();
+        btnAñadirQuesoSNL = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        cbq1 = new javax.swing.JComboBox<>();
+        cbQuesoSNL = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         cbq2 = new javax.swing.JComboBox<>();
         bq2 = new javax.swing.JButton();
@@ -59,6 +59,18 @@ public class ventana_principal extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         cbq4 = new javax.swing.JComboBox<>();
         bq4 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtQuesoSinLactosa = new javax.swing.JTextArea();
+        lblTituloQuesoSinLactosa = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
         ScrollPaneaccesorios = new javax.swing.JScrollPane();
         accesorios = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
@@ -75,6 +87,18 @@ public class ventana_principal extends javax.swing.JFrame {
         bacc4 = new javax.swing.JButton();
         cbacc4 = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jLabel32 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
+        jLabel33 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea7 = new javax.swing.JTextArea();
+        jLabel34 = new javax.swing.JLabel();
         ScrollPane_inicio = new javax.swing.JScrollPane();
         inicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -100,6 +124,18 @@ public class ventana_principal extends javax.swing.JFrame {
         ba4 = new javax.swing.JButton();
         cba4 = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTextArea8 = new javax.swing.JTextArea();
+        jLabel36 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTextArea9 = new javax.swing.JTextArea();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTextArea10 = new javax.swing.JTextArea();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTextArea11 = new javax.swing.JTextArea();
         lblQuesabor = new javax.swing.JLabel();
         Lbltotal = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -122,24 +158,24 @@ public class ventana_principal extends javax.swing.JFrame {
 
         Quesos.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1.jpg"))); // NOI18N
+        lblQuesoSinLactosa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1.jpg"))); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel7.setText("$176.00 MX");
+        lblPrecioQuesoSinLactosa.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lblPrecioQuesoSinLactosa.setForeground(new java.awt.Color(153, 153, 0));
+        lblPrecioQuesoSinLactosa.setText("$176.00 MX");
 
-        bq1.setBackground(new java.awt.Color(153, 153, 0));
-        bq1.setForeground(new java.awt.Color(255, 255, 255));
-        bq1.setText("Añadir");
-        bq1.addActionListener(new java.awt.event.ActionListener() {
+        btnAñadirQuesoSNL.setBackground(new java.awt.Color(153, 153, 0));
+        btnAñadirQuesoSNL.setForeground(new java.awt.Color(255, 255, 255));
+        btnAñadirQuesoSNL.setText("Añadir");
+        btnAñadirQuesoSNL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bq1ActionPerformed(evt);
+                btnAñadirQuesoSNLActionPerformed(evt);
             }
         });
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/2.jpg"))); // NOI18N
 
-        cbq1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        cbQuesoSNL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 153, 0));
@@ -195,6 +231,36 @@ public class ventana_principal extends javax.swing.JFrame {
             }
         });
 
+        txtQuesoSinLactosa.setColumns(20);
+        txtQuesoSinLactosa.setRows(5);
+        txtQuesoSinLactosa.setText("Perfecto para intolerantes  a la lactosa que le gustan los \nquesos suaves,pero con sabor. Se enviara un regalo, \nuna quesea reutilizable en todo los pedidos que \ncontengan un producto sin lactosa");
+        txtQuesoSinLactosa.setBorder(null);
+        jScrollPane2.setViewportView(txtQuesoSinLactosa);
+
+        lblTituloQuesoSinLactosa.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        lblTituloQuesoSinLactosa.setText("Queso de Oveja tierno sin lactosa ");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Queso  tierno con leche pasteurizada y sin lactosa .  \nTotalmente natural y con todo el sabor .Se enviara un \nregalo, una quesea reutilizable en todo los pedidos que \ncontengan un producto sin lactosa");
+        jScrollPane3.setViewportView(jTextArea1);
+
+        jLabel8.setText("Queso de oveja tierno sin lactosa con pimienta rosa");
+
+        jLabel29.setText("Requeson");
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Quien iba a decir que el suero resultante del queso \npodria salir de esta delicia??\nel requeson se deriva del suero lactico y solo podemos \ndecir una cosa , Esta buenisimo!!.\nsin nungun tipo de procesado ,sin conservantes , \nsin secretos , es un requeso natural , como el de toda la \nvida  ");
+        jScrollPane4.setViewportView(jTextArea2);
+
+        jLabel7.setText("Queso de Oveja tierno en Aceite Quesalado");
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jTextArea3.setText("Date un capricho con este tarro de queso tierno cortado \n en dados con acite de oliva virgen extraña. Cien gramos \nde queso pensados para comerlos en familia y amigos \n,envasadi en el tarro de cristal. \nSin complicaciones, solo abrir y servir.\nDura 2 meses ,Formato de 100g ");
+        jScrollPane5.setViewportView(jTextArea3);
+
         javax.swing.GroupLayout QuesosLayout = new javax.swing.GroupLayout(Quesos);
         Quesos.setLayout(QuesosLayout);
         QuesosLayout.setHorizontalGroup(
@@ -202,79 +268,139 @@ public class ventana_principal extends javax.swing.JFrame {
             .addGroup(QuesosLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
                     .addGroup(QuesosLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addComponent(jLabel6)
+                        .addContainerGap(986, Short.MAX_VALUE))
+                    .addGroup(QuesosLayout.createSequentialGroup()
                         .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel13))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(QuesosLayout.createSequentialGroup()
+                                    .addGap(2, 2, 2)
+                                    .addComponent(lblQuesoSinLactosa, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(QuesosLayout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jScrollPane2))
+                                        .addGroup(QuesosLayout.createSequentialGroup()
+                                            .addGap(19, 19, 19)
+                                            .addComponent(lblTituloQuesoSinLactosa, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(QuesosLayout.createSequentialGroup()
+                                    .addGap(0, 0, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(cbq1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPrecioQuesoSinLactosa)
+                            .addComponent(cbQuesoSNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
-                            .addComponent(bq1)
                             .addComponent(cbq2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bq2)
-                            .addComponent(jLabel12)
-                            .addComponent(cbq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bq3)
                             .addComponent(jLabel14)
                             .addComponent(cbq4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bq4))))
-                .addContainerGap(84, Short.MAX_VALUE))
+                            .addComponent(bq4)
+                            .addComponent(btnAñadirQuesoSNL)
+                            .addComponent(bq2)
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(cbq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12)
+                            .addComponent(bq3))
+                        .addGap(402, 402, Short.MAX_VALUE))))
         );
         QuesosLayout.setVerticalGroup(
             QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(QuesosLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(jLabel6)
-                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(QuesosLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel8))
+                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(57, 57, 57)
+                                        .addComponent(lblPrecioQuesoSinLactosa)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbQuesoSNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(19, 19, 19)
+                                        .addComponent(btnAñadirQuesoSNL))
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(lblTituloQuesoSinLactosa)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(75, 75, 75)
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbq2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(bq2))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
+                                        .addGap(4, 4, 4)
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(lblQuesoSinLactosa)
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel9)))
+                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel11))
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(bq3))))
                     .addGroup(QuesosLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbq1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bq1)))
-                .addGap(42, 42, 42)
-                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addGroup(QuesosLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbq2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bq2)))
-                .addGap(52, 52, 52)
-                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addGroup(QuesosLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bq3)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(QuesosLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbq4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bq4)
-                        .addGap(102, 102, 102))
-                    .addGroup(QuesosLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel13)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbq4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bq4)
+                                .addGap(33, 33, 33)))))
+                .addGap(102, 102, 102))
         );
 
         ScrollPanequesos.setViewportView(Quesos);
@@ -347,68 +473,145 @@ public class ventana_principal extends javax.swing.JFrame {
         jLabel28.setForeground(new java.awt.Color(153, 153, 0));
         jLabel28.setText("$298.00 MXN");
 
+        jLabel31.setText("Botella de cristal Summun 2020-educion Limitada");
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jTextArea4.setText("Un grito a los recuerdos a la historia de una infancia. \nEso es lo que significa Summum 2002");
+        jScrollPane6.setViewportView(jTextArea4);
+
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jTextArea5.setText("Fondue para queso ,preparada una cena para tus amigos ,\n para chuparte los dedos.");
+        jScrollPane7.setViewportView(jTextArea5);
+
+        jLabel32.setText("Founde para queso Boska set Non-Stick");
+
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jTextArea6.setText("Founde para dos .");
+        jScrollPane8.setViewportView(jTextArea6);
+
+        jLabel33.setText("Founde para quesos tapas Grey");
+
+        jTextArea7.setColumns(20);
+        jTextArea7.setRows(5);
+        jTextArea7.setText("Founde tapas Gouda\n");
+        jScrollPane9.setViewportView(jTextArea7);
+
+        jLabel34.setText("Founde tapas Gouda");
+
         javax.swing.GroupLayout accesoriosLayout = new javax.swing.GroupLayout(accesorios);
         accesorios.setLayout(accesoriosLayout);
         accesoriosLayout.setHorizontalGroup(
             accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(accesoriosLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
+                .addComponent(jLabel23)
+                .addGap(256, 256, 256))
+            .addGroup(accesoriosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel23)
                     .addGroup(accesoriosLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel24)
-                        .addGap(18, 18, 18)
                         .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel26)
-                            .addComponent(cbacc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bacc1)
-                            .addComponent(bacc2)
-                            .addComponent(cbacc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27)
-                            .addComponent(cbacc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bacc3)
-                            .addComponent(bacc4)
-                            .addComponent(cbacc4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane7)
+                            .addComponent(jScrollPane8)
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 154, Short.MAX_VALUE))
+                            .addComponent(jScrollPane9)
+                            .addComponent(jScrollPane6))
+                        .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25)
+                                    .addComponent(cbacc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bacc1)))
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(jLabel26))
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bacc2)
+                                    .addComponent(cbacc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel27)
+                                    .addComponent(cbacc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bacc3)
+                                    .addComponent(bacc4)
+                                    .addComponent(cbacc4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel28))))
+                        .addGap(287, 287, 287))
+                    .addGroup(accesoriosLayout.createSequentialGroup()
+                        .addComponent(jLabel31)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         accesoriosLayout.setVerticalGroup(
             accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(accesoriosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel23)
-                .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(accesoriosLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbacc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(bacc1)
-                        .addGap(134, 134, 134)
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbacc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bacc2)
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbacc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bacc3)
-                        .addGap(157, 157, 157)
-                        .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbacc4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bacc4))
+                        .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, accesoriosLayout.createSequentialGroup()
+                                .addGap(69, 69, 69)
+                                .addComponent(jLabel25)
+                                .addGap(27, 27, 27)
+                                .addComponent(cbacc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bacc1))
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(jLabel31)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addGap(123, 123, 123)
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addGap(137, 137, 137)
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbacc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bacc2)))
+                        .addGap(81, 81, 81)
+                        .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addComponent(jLabel33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbacc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bacc3)))
+                        .addGap(113, 113, 113)
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(accesoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(accesoriosLayout.createSequentialGroup()
+                                .addComponent(jLabel28)
+                                .addGap(13, 13, 13)
+                                .addComponent(cbacc4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bacc4))
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(accesoriosLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel24)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         ScrollPaneaccesorios.setViewportView(accesorios);
@@ -463,7 +666,7 @@ public class ventana_principal extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(39, 39, 39))
         );
@@ -542,6 +745,34 @@ public class ventana_principal extends javax.swing.JFrame {
         jLabel22.setForeground(new java.awt.Color(153, 153, 0));
         jLabel22.setText("$33.80MXN");
 
+        jLabel35.setText("Chocolate artesano con queso");
+
+        jTextArea8.setColumns(20);
+        jTextArea8.setRows(5);
+        jTextArea8.setText("Una mezcla explosiva, chocolate y queso ");
+        jScrollPane10.setViewportView(jTextArea8);
+
+        jLabel36.setText("Chocolate negro 70%  ");
+
+        jTextArea9.setColumns(20);
+        jTextArea9.setRows(5);
+        jTextArea9.setText("Chocolate 70% cacao con  yogurt y frambuesa ");
+        jScrollPane11.setViewportView(jTextArea9);
+
+        jTextArea10.setColumns(20);
+        jTextArea10.setRows(5);
+        jTextArea10.setText("Salsa para quesos de manzana Golden caramelizada con \npistachos tiernos de Turquia y canela de sri Lanka");
+        jScrollPane12.setViewportView(jTextArea10);
+
+        jLabel37.setText("Salsa para queso de manzana Golden ");
+
+        jLabel38.setText("Salsa para queso de melocoton y albaricoque");
+
+        jTextArea11.setColumns(20);
+        jTextArea11.setRows(5);
+        jTextArea11.setText("Salsa para quesos de melocoton y albaricoque con bayas\n de goji y cardamomo de Guatemala.");
+        jScrollPane13.setViewportView(jTextArea11);
+
         javax.swing.GroupLayout alacenaLayout = new javax.swing.GroupLayout(alacena);
         alacena.setLayout(alacenaLayout);
         alacenaLayout.setHorizontalGroup(
@@ -549,40 +780,55 @@ public class ventana_principal extends javax.swing.JFrame {
             .addGroup(alacenaLayout.createSequentialGroup()
                 .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(alacenaLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(alacenaLayout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addGap(42, 42, 42)
-                                .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(ba1, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel20)
-                                                .addComponent(jLabel21)
-                                                .addComponent(cba2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(cba1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel19)))
-                            .addGroup(alacenaLayout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addGap(43, 43, 43)
-                                .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ba2)
-                                    .addComponent(ba4)
-                                    .addComponent(cba4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel22)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alacenaLayout.createSequentialGroup()
-                                .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ba3)
-                                    .addComponent(cba3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(3, 3, 3))))
-                    .addGroup(alacenaLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(alacenaLayout.createSequentialGroup()
+                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(alacenaLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(alacenaLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(99, 99, 99)
+                                        .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel21)
+                                            .addComponent(cba3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ba3)))))))
+                    .addGroup(alacenaLayout.createSequentialGroup()
+                        .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(alacenaLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, alacenaLayout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane11))))
+                        .addGap(45, 45, 45)
+                        .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ba2)
+                            .addComponent(ba4)
+                            .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ba1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cba2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel19))
+                            .addComponent(jLabel22)
+                            .addComponent(cba4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cba1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(390, Short.MAX_VALUE))
         );
         alacenaLayout.setVerticalGroup(
             alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -591,10 +837,24 @@ public class ventana_principal extends javax.swing.JFrame {
                     .addGroup(alacenaLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jLabel16)
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel15)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel17))
+                        .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(alacenaLayout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel15))
+                            .addGroup(alacenaLayout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel35)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(alacenaLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel17))
+                            .addGroup(alacenaLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(jLabel36)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(alacenaLayout.createSequentialGroup()
                         .addGap(214, 214, 214)
                         .addComponent(jLabel19)
@@ -602,29 +862,38 @@ public class ventana_principal extends javax.swing.JFrame {
                         .addComponent(cba1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ba1)
-                        .addGap(133, 133, 133)
+                        .addGap(150, 150, 150)
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cba2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ba2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(56, 56, 56)
                 .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(alacenaLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110)
+                        .addGroup(alacenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel22))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel18)
+                    .addGroup(alacenaLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
                         .addComponent(jLabel21)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cba3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
+                        .addComponent(cba3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ba3)
-                        .addGap(133, 133, 133)
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(163, 163, 163)
                         .addComponent(cba4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ba4))
-                    .addComponent(jLabel18))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ba4)))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         ScrollPane_alacena.setViewportView(alacena);
@@ -719,13 +988,13 @@ public class ventana_principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bq1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bq1ActionPerformed
+    private void btnAñadirQuesoSNLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirQuesoSNLActionPerformed
         bd.abrir_conexion();
-        setear_art(cbq1.getSelectedIndex()+1,1);
+        setear_art(cbQuesoSNL.getSelectedIndex()+1,1);
         bd.instertar_art(articulos,1);
         bd.cerrar_conexion();
         ver_pedido();
-    }//GEN-LAST:event_bq1ActionPerformed
+    }//GEN-LAST:event_btnAñadirQuesoSNLActionPerformed
 
     private void bq2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bq2ActionPerformed
         bd.abrir_conexion();
@@ -916,11 +1185,12 @@ public class ventana_principal extends javax.swing.JFrame {
     private javax.swing.JButton bacc2;
     private javax.swing.JButton bacc3;
     private javax.swing.JButton bacc4;
-    private javax.swing.JButton bq1;
     private javax.swing.JButton bq2;
     private javax.swing.JButton bq3;
     private javax.swing.JButton bq4;
+    private javax.swing.JButton btnAñadirQuesoSNL;
     private javax.swing.JButton carrito;
+    private javax.swing.JComboBox<String> cbQuesoSNL;
     private javax.swing.JComboBox<String> cba1;
     private javax.swing.JComboBox<String> cba2;
     private javax.swing.JComboBox<String> cba3;
@@ -929,7 +1199,6 @@ public class ventana_principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbacc2;
     private javax.swing.JComboBox<String> cbacc3;
     private javax.swing.JComboBox<String> cbacc4;
-    private javax.swing.JComboBox<String> cbq1;
     private javax.swing.JComboBox<String> cbq2;
     private javax.swing.JComboBox<String> cbq3;
     private javax.swing.JComboBox<String> cbq4;
@@ -955,8 +1224,17 @@ public class ventana_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -964,8 +1242,35 @@ public class ventana_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea10;
+    private javax.swing.JTextArea jTextArea11;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextArea jTextArea7;
+    private javax.swing.JTextArea jTextArea8;
+    private javax.swing.JTextArea jTextArea9;
+    private javax.swing.JLabel lblPrecioQuesoSinLactosa;
     private javax.swing.JLabel lblQuesabor;
+    private javax.swing.JLabel lblQuesoSinLactosa;
+    private javax.swing.JLabel lblTituloQuesoSinLactosa;
     private javax.swing.JTabbedPane opciones;
     private javax.swing.JTable table_ticket;
+    private javax.swing.JTextArea txtQuesoSinLactosa;
     // End of variables declaration//GEN-END:variables
 }
