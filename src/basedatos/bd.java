@@ -68,7 +68,7 @@ public class bd {
                     cons_rep.setInt(2, art.getId());
                     rs = cons_rep.executeQuery();   //guardamos dentro de nuesto result set lo que nos regresa el query
                     
-                    if(!rs.next()){     //si 
+                    if(!rs.next()){     //si la consulta no encontro nada, insertaremos un nuevo articulo dentro de la bd
                     insertArt.setInt(1,art.getId());
                     insertArt.setString(2, art.getNombre());
                     insertArt.setInt(3, art.getCantidad());
@@ -76,7 +76,7 @@ public class bd {
                     insertArt.setDouble(5, art.getSubtotal());
                     insertArt.setInt(6, clve_art);
                     insertArt.executeUpdate();
-                    }else{
+                    }else{  //si no haremos un update actualizando la cantidad y el subtotal del articulo
                     art.setCantidad(rs.getInt("cantidad")+art.getCantidad());
                     art.setSubtotal();
                     upd_cant.setInt(1, art.getCantidad());
@@ -90,17 +90,14 @@ public class bd {
                         System.out.println(ex.getMessage());
                 }
             }
-            
+                
             public int obtener_ID(){
                 ResultSet id = null;
                   try{
-                    id = ultimo_id.executeQuery();
-                  //insertArt.setInt(1, id.getInt("MAX(numticket)"));
-                  //id.getInt("MAX(numticket)");
-                  if (id.next()){
-                    //  ID = id.getInt("MAX(numticket)");
+                    id = ultimo_id.executeQuery();  //ejecutamos la sentencia para ir a buscar el valor maximo dentro de la tabla
+                  if (id.next()){       
                       System.out.println("El id es "+id.getInt("MAX(numticket)"));
-                      return id.getInt("MAX(numticket)");
+                      return id.getInt("MAX(numticket)");   //regresamos en valor entero el valor maximo de la tabla
                   }
                   }catch(SQLException ex){
                         System.out.println("Error al consultar el MAX");
@@ -109,7 +106,7 @@ public class bd {
         return -1;
             }
             
-            public int obtener_cant(int ticket){
+        /*    public int obtener_cant(int ticket){
                 ResultSet cont = null;
                   try{
                       cant_art.setInt(1, ticket);
@@ -127,9 +124,9 @@ public class bd {
                     }
                 
                 return-1;
-            }
+            }*/
             
-            public void crear_modelo_Ticket(){
+            public void crear_modelo_Ticket(){  //se crea el modelo de la tabla seteando el nombre de las columnas
                 modeloTicket.addColumn("Cant");
                 modeloTicket.addColumn("Descripcion");
                 modeloTicket.addColumn("Precio");
@@ -180,42 +177,44 @@ public class bd {
             }
     }
 
-            public double obtener_total(int ticket){
-                double tot=0;
+            public double obtener_total(int ticket){ //se manda por referencia el numero de ticket
+                double tot=0;   //se crea la variable local llamada total
                 ResultSet rs = null;
                 try{
-                    total.setInt(1, ticket);
-                    rs = total.executeQuery();
+                    total.setInt(1, ticket); 
+                    rs = total.executeQuery();  //guardamos dentro de rs la suma de los subtotales en referencia al numero de ticket
                     if(rs.next())
                         tot = rs.getDouble(1);
                 }catch(SQLException ex){
                 }
 
-                return tot;
+                return tot;         //regresamos la variable local tot con el total obtenido de la consulta de la base de datos
             }
 
             public Articulo set_art(int clave){
-                Articulo arti = new Articulo();
+                Articulo arti = new Articulo(); //se instancia el objeto articulo
                 ResultSet rs = null;
                 
                 try{
-                    cons_art.setInt(1, clave);
-                    rs = cons_art.executeQuery();
+                    cons_art.setInt(1, clave);  
+                    rs = cons_art.executeQuery();   //guardamos lo regresado por el query dentro de rs
                     
                     if(rs.next()){
-                       arti.setNombre(rs.getString("descripcion"));
+                        //guardamos dentro de el objeto articulo el nombre tomando la descripcion regresada por el query
+                       arti.setNombre(rs.getString("descripcion")); 
+                       //guardamos dentro de el objeto articulo el precio tomando el precio regresada por el query
                        arti.setPrecio(rs.getDouble("precio"));
                     }
                 }catch(SQLException ex){
                         System.out.println("Error al consultar el articulo");
                         System.out.println(ex.getMessage());
                 }
-                return arti;
+                return arti;        //regresamos el articulo con solo seteado los valores de descripcion y precio
             }
             
-            public void insertar_vta(Venta vta){
+            public void insertar_vta(Venta vta){        //insertamos una venta recibiendo por referencia un objeto venta
                 try{
-                ins_vta.setInt(1,vta.getNum_tkt());
+                ins_vta.setInt(1,vta.getNum_tkt());             //asignamos valores del atributo del objeto a nuestro statement
                 ins_vta.setBoolean(2, vta.isStatus());
                 ins_vta.setString(3, vta.getNombre());
                 ins_vta.setString(4, vta.getTelefono());
@@ -225,7 +224,7 @@ public class bd {
                 ins_vta.setString(8,vta.getEstado());
                 ins_vta.setString(9,vta.getMetodo_pago());
                 
-                ins_vta.executeUpdate();
+                ins_vta.executeUpdate();                             //ejecutamos el query actualizando la base de datos
                 }catch(SQLException ex){
                         System.out.println("Error al insertar una venta");
                         System.out.println(ex.getMessage());
