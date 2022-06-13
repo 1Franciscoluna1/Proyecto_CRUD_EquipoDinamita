@@ -364,9 +364,9 @@ public class carrito extends javax.swing.JFrame {
                 objvtnprin.setVisible(true);
                 this.dispose();
                 objvtnprin.ver_pedido();
+                this.limpiar_cajas();
             }
         
-                this.limpiar_cajas();
         
         
     }//GEN-LAST:event_confirmarcActionPerformed

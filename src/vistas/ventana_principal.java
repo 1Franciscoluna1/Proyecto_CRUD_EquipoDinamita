@@ -10,23 +10,26 @@ public class ventana_principal extends javax.swing.JFrame {
     /**
      * Creates new form ventana_principal
      */
-    bd bd = null;
-    carrito vtncarrito = null;
-    Articulo articulos = new Articulo();
-    int cont=0, ID_Compra ;
-    String pedido="";
-    DefaultTableModel modeloTicket=null;
     
-    public ventana_principal() {
-        bd = new bd();
-        modeloTicket = new DefaultTableModel();
-        initComponents();
-        bd.abrir_conexion();
-        crear_modelo_Ticket();
-        table_ticket.setModel(modeloTicket);
-         ID_Compra = bd.obtener_ID();
-        bd.cerrar_conexion();
-        ver_pedido();
+    bd bd = null;//instanciamos el objeto de la base de datos en null
+    carrito vtncarrito = null;//instanciamos la ventana del carrito en null
+    Articulo articulos = new Articulo();//instanciamos la clase articulo en null
+    int cont=0, ID_Compra ; //estas seran variables que se usaran mas delante para el control de la ventana
+    String pedido="";//En una fase previa del proyecto el pedido se mostraba con un string, ***en des-uso***
+    DefaultTableModel modeloTicket=null;//instanciamos el modelo de la tabla en null
+    double total=0;//variable de la ventana para mostrar el total
+    
+    public ventana_principal() {//Inicio del constructor de la ventana principal
+        bd = new bd();      //se asigna el new de la base de datos
+        modeloTicket = new DefaultTableModel(); //se asigna el new al modelo ticket
+        initComponents();      //inicializa los componentes de la ventana
+        bd.abrir_conexion();    //abre la conexxion con la base de datos
+        crear_modelo_Ticket();  //Crea un modelo vacia solamente con el nombre de las columnas
+        table_ticket.setModel(modeloTicket);    //le asigna el modelo creado a la tabla de la ventana
+        ID_Compra = bd.obtener_ID();    //Va y busca el numero de tiket mayor en la base de datos, si ya fue cerrado brinca al siguiente
+                                        //si no se queda en el maximo para seguir comprando
+        bd.cerrar_conexion();      //cierra la conexion con la base de datos
+        ver_pedido();       //en base al numero de ticket, muestra en la tabla los articulos que estan relacionados con ese ticket
     }
 
     /**
@@ -40,6 +43,13 @@ public class ventana_principal extends javax.swing.JFrame {
 
         carrito = new javax.swing.JButton();
         opciones = new javax.swing.JTabbedPane();
+        ScrollPane_inicio = new javax.swing.JScrollPane();
+        inicio = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         ScrollPanequesos = new javax.swing.JScrollPane();
         Quesos = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -99,13 +109,6 @@ public class ventana_principal extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextArea7 = new javax.swing.JTextArea();
         jLabel34 = new javax.swing.JLabel();
-        ScrollPane_inicio = new javax.swing.JScrollPane();
-        inicio = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         ScrollPane_alacena = new javax.swing.JScrollPane();
         alacena = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -155,6 +158,63 @@ public class ventana_principal extends javax.swing.JFrame {
                 carritoActionPerformed(evt);
             }
         });
+
+        inicio.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Myanmar Text", 1, 80)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel1.setText("QUE SABOR.");
+
+        jLabel2.setFont(new java.awt.Font("Myanmar Text", 3, 36)); // NOI18N
+        jLabel2.setText("De mazamitla a tu casa.");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/inicio.jpg"))); // NOI18N
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Captura de pantalla 2022-05-22 184455.jpg"))); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/a.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout inicioLayout = new javax.swing.GroupLayout(inicio);
+        inicio.setLayout(inicioLayout);
+        inicioLayout.setHorizontalGroup(
+            inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inicioLayout.createSequentialGroup()
+                .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inicioLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inicioLayout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inicioLayout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(jLabel2))
+                    .addGroup(inicioLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        inicioLayout.setVerticalGroup(
+            inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inicioLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(39, 39, 39))
+        );
+
+        ScrollPane_inicio.setViewportView(inicio);
+
+        opciones.addTab("Inicio", ScrollPane_inicio);
 
         Quesos.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -349,7 +409,6 @@ public class ventana_principal extends javax.swing.JFrame {
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(75, 75, 75)
                                 .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
                                 .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(QuesosLayout.createSequentialGroup()
                                         .addGap(15, 15, 15)
@@ -617,63 +676,6 @@ public class ventana_principal extends javax.swing.JFrame {
         ScrollPaneaccesorios.setViewportView(accesorios);
 
         opciones.addTab("Accesorios", ScrollPaneaccesorios);
-
-        inicio.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Myanmar Text", 1, 80)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel1.setText("QUE SABOR.");
-
-        jLabel2.setFont(new java.awt.Font("Myanmar Text", 3, 36)); // NOI18N
-        jLabel2.setText("De mazamitla a tu casa.");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/inicio.jpg"))); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Captura de pantalla 2022-05-22 184455.jpg"))); // NOI18N
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/a.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout inicioLayout = new javax.swing.GroupLayout(inicio);
-        inicio.setLayout(inicioLayout);
-        inicioLayout.setHorizontalGroup(
-            inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inicioLayout.createSequentialGroup()
-                .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(inicioLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(inicioLayout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(inicioLayout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel2))
-                    .addGroup(inicioLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        inicioLayout.setVerticalGroup(
-            inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inicioLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(39, 39, 39))
-        );
-
-        ScrollPane_inicio.setViewportView(inicio);
-
-        opciones.addTab("Inicio", ScrollPane_inicio);
 
         alacena.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -989,11 +991,12 @@ public class ventana_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAñadirQuesoSNLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirQuesoSNLActionPerformed
-        bd.abrir_conexion();
-        setear_art(cbQuesoSNL.getSelectedIndex()+1,1);
-        bd.instertar_art(articulos,1);
-        bd.cerrar_conexion();
-        ver_pedido();
+        bd.abrir_conexion();    //abrimos conexion con la base de datos
+        setear_art(cbQuesoSNL.getSelectedIndex()+1,1);  //dentro de nuestro objeto articulo guardamos lo seleccionado en el combo
+                                                            //box como la cantidad y mandamos el codigo del articulo, en este caso 1
+        bd.instertar_art(articulos,1);//insertamos dentro de la base de datos nuestro objeto articulo y la clave del articulo
+        bd.cerrar_conexion();           //cerramos conexion
+        ver_pedido();           //actualizamos la vista de nuestra tabla para que se vea en la misma el nuevo articulo que acabamos de agregar
     }//GEN-LAST:event_btnAñadirQuesoSNLActionPerformed
 
     private void bq2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bq2ActionPerformed
@@ -1021,11 +1024,11 @@ public class ventana_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_bq4ActionPerformed
 
     private void carritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carritoActionPerformed
-        if(vtncarrito==null){
+        if(vtncarrito==null){               //Si la ventana no ha sido instanciada la instancia
             vtncarrito = new carrito(this,modeloTicket,total,ID_Compra);
         }
-        vtncarrito.setVisible(true);
-        this.setVisible(false);
+        vtncarrito.setVisible(true);    //hace visible la ventana carrito
+        this.setVisible(false);         //setea en no visible la ventana principal
     }//GEN-LAST:event_carritoActionPerformed
 
     private void cbq4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbq4ActionPerformed
@@ -1096,39 +1099,42 @@ public class ventana_principal extends javax.swing.JFrame {
         ver_pedido();
     }//GEN-LAST:event_ba4ActionPerformed
 
-    public void setear_art(int cantidad, int clave){
-        articulos = bd.set_art(clave);
-        articulos.setCantidad(cantidad);
-        articulos.setSubtotal();
-        articulos.setId(ID_Compra);
+    public void setear_art(int cantidad, int clave){    //Se seteara un articulo mandando por referencia la cantidad de un combobox 
+                                                        //y la clave del articulo a setear
+        articulos = bd.set_art(clave);          //va y busca en la base de datos dentro de nuestro catalogo de articulos el articulo con
+                                                //referencia a nuestra clave de articulo y setea dentro de articulos la clave, el precio
+                                                //y la descripcion
+        articulos.setCantidad(cantidad);//Setea dentro de articulos la cantidad mandada como referencia del combobox
+        articulos.setSubtotal();    //setea el subtotal multiplicando la cantidad por el precio unitario
+        articulos.setId(ID_Compra);//le coloca la etiqueta del numero de ticket al que se le esta añadiendo este articulo
     }
     
     public void ver_pedido(){
-        bd.abrir_conexion();
-        modeloTicket = bd.consultar_Ticket(ID_Compra);
+        bd.abrir_conexion();        //abrimos la conexion con la bd
+        modeloTicket = bd.consultar_Ticket(ID_Compra);  //mandamos a buscar dentro de la base de datos todos los articulos
+                                                             //que esten referenciados al numero de ticket
         System.out.println(modeloTicket.getRowCount());
         
-        if(modeloTicket.getRowCount()!= 0){
-          table_ticket.setModel(modeloTicket);
+        if(modeloTicket.getRowCount()!= 0){                 //si la cantidad de filas no es igual a 0
+          table_ticket.setModel(modeloTicket);      //seteamos el modelo de nuetra tabla
             for (int i = 0; i < 4; i++) {
-                if(i!=1&&i!=3){
-                    table_ticket.getColumnModel().getColumn(i).setMaxWidth(40);}
+                if(i!=1&&i!=3){                             //como son 4 columnas, las que no sean ni la 1 ni la 3
+                    table_ticket.getColumnModel().getColumn(i).setMaxWidth(40);}//seran seteadas con un ancho max de 40
             }
           
-            table_ticket.getColumnModel().getColumn(3).setMaxWidth(45);
+            table_ticket.getColumnModel().getColumn(3).setMaxWidth(45);//la columna 3 sera seteada con un ancho de 45
         }
-     /*   else
-            JOptionPane.showMessageDialog(this, "Ticket no se encuentra en la BD");*/
-        total = bd.obtener_total(ID_Compra);
-        Lbltotal.setText("$"+total);
-        bd.cerrar_conexion();
+        total = bd.obtener_total(ID_Compra); //va a la base de datos y hace la suma de todos los subtotales con referencia a
+                                                   // que tengan el mismo numero de ticket que estamos manejando
+        Lbltotal.setText("$"+total);       //imprime en la etiqueta el total que llevamos hasta el momento
+        bd.cerrar_conexion();       //cierra la conexion
     }
     
-    public void crear_modelo_Ticket(){
-	modeloTicket.addColumn("Cant");
-        modeloTicket.addColumn("Descripcion");
-        modeloTicket.addColumn("Precio");
-        modeloTicket.addColumn("Importe");
+    public void crear_modelo_Ticket(){      //Se crea el modelo del ticket
+	modeloTicket.addColumn("Cant");         //Se le coloca le nombre de CANT a la primer columna
+        modeloTicket.addColumn("Descripcion");  //Se le coloca le nombre de CANT a la primer columna
+        modeloTicket.addColumn("Precio");       //Se le coloca le nombre de CANT a la primer columna
+        modeloTicket.addColumn("Importe");      //Se le coloca le nombre de CANT a la primer columna
         
     }
 
