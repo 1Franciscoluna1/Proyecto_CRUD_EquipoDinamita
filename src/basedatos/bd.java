@@ -17,21 +17,23 @@ import javax.swing.table.DefaultTableModel;
  * @author pacol
  */
 public class bd {
-    Connection conexion;
-    PreparedStatement insertArt, ultimo_id, cant_art, cons_art, total, cons_tkt, cons_rep, upd_cant,ins_vta;
+    Connection conexion;  //se crea el objeto de conexion
+    //se crean los statement que seran utilizados para las distintas consultas
+    PreparedStatement insertArt, ultimo_id, cant_art, cons_art, total, cons_tkt, cons_rep, upd_cant,ins_vta, ver_status;
+    //se crea el objeto del modelo de la tabla con el que vamos a trabajar
     DefaultTableModel modeloTicket = new DefaultTableModel();
     
     
-    public bd(){
+    public bd(){    //iniciamos en constructor
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");      //validamos que el driver este cargado correctamente
         }catch(ClassNotFoundException ex){
             System.out.println("Error al cargar el controlador de MySQL");
         }  
-        crear_modelo_Ticket();
+        crear_modelo_Ticket();      //creamos el modelo de la tabla aunque este vacia
     }
     
-           public void abrir_conexion(){
+           public void abrir_conexion(){        //cuando abrimos conexion
         try{
         conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1/francisco?serverTimezone=GMT-5","root","");      
         insertArt = conexion.prepareStatement("INSERT INTO compras VALUES (?, ?, ?, ?, ?, ?)");
@@ -43,6 +45,7 @@ public class bd {
         cons_rep = conexion.prepareStatement("SELECT * FROM compras WHERE cod_art=? AND numticket=?");
         upd_cant = conexion.prepareStatement("UPDATE compras SET cantidad = ?, sub_total = ? WHERE cod_art = ?");
         ins_vta = conexion.prepareStatement("INSERT INTO ventas values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        ver_status = conexion.prepareStatement("SELECT status FROM ventas WHERE numticket = ?");
         }catch(SQLException ex){
             System.out.println("Error al abrir la conexion de la BD");
         }
@@ -51,7 +54,7 @@ public class bd {
         
             public void cerrar_conexion(){
         try{
-            conexion.close();
+            conexion.close();           //cerramos la conexion con la base de datos por prtocolo de seguridad
         }catch(SQLException ex){
             System.out.println("Error al cerrar la conexion de la BD");
         }
@@ -60,19 +63,18 @@ public class bd {
             public void instertar_art(Articulo art,int clve_art){
                    ResultSet rs = null;      
                 try{
-                    
-                    cons_rep.setInt(1, clve_art);
+                    //mandamos a consulta dentro de la base de datos con las referencias de nuestra clave de art y numero de ticket
+                    cons_rep.setInt(1, clve_art);   
                     cons_rep.setInt(2, art.getId());
-                    rs = cons_rep.executeQuery();
+                    rs = cons_rep.executeQuery();   //guardamos dentro de nuesto result set lo que nos regresa el query
                     
-                    if(!rs.next()){
+                    if(!rs.next()){     //si 
                     insertArt.setInt(1,art.getId());
                     insertArt.setString(2, art.getNombre());
                     insertArt.setInt(3, art.getCantidad());
                     insertArt.setDouble(4, art.getPrecio());
                     insertArt.setDouble(5, art.getSubtotal());
                     insertArt.setInt(6, clve_art);
-                //  System.out.println("\n\n"+ID+art.getNombre()+art.getCantidad()+art.getPrecio()+art.getSubtotal());
                     insertArt.executeUpdate();
                     }else{
                     art.setCantidad(rs.getInt("cantidad")+art.getCantidad());
@@ -136,51 +138,45 @@ public class bd {
 
 
             public DefaultTableModel consultar_Ticket(int ticket){
-                ResultSet rs = null;
+                ResultSet rs = null;        //seteamos nuestro result set en null
                 try{
-                    cons_tkt.setInt(1, ticket);
-                    rs = cons_tkt.executeQuery();
+                    cons_tkt.setInt(1, ticket);     //seteamos dentro de nuestro statement el numero de ticket
+                    rs = cons_tkt.executeQuery();       //dentro de rs se almacenara el result set al ejecutar el query
                     if(rs.next()){
-                        cargar_datos_modelo(rs);
+                        cargar_datos_modelo(rs);        //funcion para cargar el modelo en base a el rs
                     } else {
-                        modeloTicket.setRowCount(0);}
+                        modeloTicket.setRowCount(0);} //si la consulta fue vacia o no encuentra nada, setea las filas en 0 dentro del modelo
                 }catch(SQLException ex){
                     System.out.println("Error al consultar el ticket");
                     System.out.println(ex.getMessage());
                 }
-                return modeloTicket;
+                return modeloTicket;                //regresamos el modelo que ubtuvimos en base a nuestro result set
             }
 
             private void cargar_datos_modelo(ResultSet rs){		
-            borrar_modelo();
+            borrar_modelo();        //se borra el modelo y deja en blanco todo
             try
             {
 //		 Bucle para cada resultado en la consulta
-            do 
-            {
-               // Se crea un array que será una de las filas de la tabla.
-               Object [] fila = new Object[4]; // Hay nueve columnas en la tabla
-
-               // Se rellena cada posición del array con una de las columnas de la tabla en base de datos.
-             /*  for (int i=0;i<fila.length; i++){
-                  //fila[i] = rs.getObject(i+1); // El primer indice en rs es el 1, no el cero, por eso se suma 1.
-               }*/
-                  fila[0] = rs.getObject(3);
-                  fila[1] = rs.getObject(2);
-                  fila[2] = rs.getObject(4);
-                  fila[3] = rs.getObject(5);
-               // System.out.println(fila[i]);
-               // Se añade al modelo la fila completa.
-               modeloTicket.addRow(fila);
-            }while (rs.next());
-
+                do 
+                {
+                   // Se crea un array que será una de las filas de la tabla.
+                   Object [] fila = new Object[4]; // Hay nueve columnas en la tabla
+                      fila[0] = rs.getObject(3);//se asigna cada valor de nuestro result set a cada objeto correspondiente a su columna
+                      fila[1] = rs.getObject(2);
+                      fila[2] = rs.getObject(4);
+                      fila[3] = rs.getObject(5);
+                   // System.out.println(fila[i]);
+                   // Se añade al modelo la fila completa.
+                   modeloTicket.addRow(fila);
+                }while (rs.next());
             }catch(SQLException obj){}
 
     }
 
             public void borrar_modelo(){
-            while(modeloTicket.getRowCount() >= 1){
-                    modeloTicket.removeRow(modeloTicket.getRowCount()-1);
+            while(modeloTicket.getRowCount() >= 1){ //ciclo para borrar las filas hasta que el contador de filas sea menor a 1
+                    modeloTicket.removeRow(modeloTicket.getRowCount()-1); //elimina la fila 
             }
     }
 
@@ -235,4 +231,5 @@ public class bd {
                         System.out.println(ex.getMessage());
                 }
             }
+            
 }
