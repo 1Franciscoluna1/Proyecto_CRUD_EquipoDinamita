@@ -3,10 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vistas;
-/**
- *
- * @author HP
-*/
+
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -22,11 +19,13 @@ public class carrito extends javax.swing.JFrame {
     private int tkt;
     ventana_principal objvtnprin = null;
     
-    public carrito(ventana_principal obj,DefaultTableModel model_tkt,double total,int ticket){
+    public carrito(ventana_principal obj,DefaultTableModel model_tkt,double total,int ticket){//inicia el constructor
         this.objvtnprin = obj;
         bd = new bd();
         initComponents();
-        jTable1.setModel(model_tkt);
+        //iniciamos la tabla con el modelo del ticket pasado por referencia con los datos de la compra
+        jTable1.setModel(model_tkt);            
+        //colocamos el valor del total en la etiqueta el cual fue tambien pasado por referencia
         lbltotal.setText("Total a pagar: $"+total);
         tkt = ticket;
     }
@@ -310,7 +309,7 @@ public class carrito extends javax.swing.JFrame {
         int opc=8;
         Venta venta = new Venta();
         String mtdo_pgo=null;
-        
+        //validamos el metodo de pago seleccionado en el grupo de radio buttons
                 if(tarjeta.isSelected()){
                     mtdo_pgo="Tarjeta";
                 }else if(efectivo.isSelected()){
@@ -320,7 +319,7 @@ public class carrito extends javax.swing.JFrame {
                 }else if(eleven.isSelected()){
                     mtdo_pgo="7 Eleven";
                 }
-        
+        //validamos los datos ingresados dentro de los textfields
         if(nombre.getText().length()<10){
             JOptionPane.showMessageDialog(this,"Nombre erroneo");}
         else if(telefono.getText().length()<10){
@@ -342,6 +341,7 @@ public class carrito extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Selecciona un metodo de pago");
         }
         else{
+            //si todos los datos estan bien llenados guardara dentro del objeto venta los datos escritos dentro de los textfields
             venta.setNum_tkt(tkt);
             venta.setNombre(nombre.getText());
             venta.setTelefono(telefono.getText());
@@ -351,8 +351,10 @@ public class carrito extends javax.swing.JFrame {
             venta.setMetodo_pago(mtdo_pgo);
             venta.setEstado("Jalisco");
             venta.setStatus(true);
-            
+            //guardamos en un string todo lo guardado dentro del objeto venta
             String validacion=venta.mostrar_datos();
+            //muestra una ventana de confirmacion donde pide al usuario validar sus datos, si estan bien lo ssubira a la base de datos
+            //si no estan bien, regresara a la ventana para que haga la correccion de los datos
             opc = JOptionPane.showConfirmDialog(this, "¿Sus datos estan bien?\n\n"+validacion, "Valide sus datos",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         }
             if (opc == 0){
