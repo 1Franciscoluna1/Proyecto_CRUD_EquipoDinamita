@@ -3,6 +3,7 @@ package vistas;
 import logica.Articulo;
 import basedatos.bd;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 public class ventana_principal extends javax.swing.JFrame {
@@ -37,40 +38,10 @@ public class ventana_principal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         carrito = new javax.swing.JButton();
         opciones = new javax.swing.JTabbedPane();
-        ScrollPanequesos = new javax.swing.JScrollPane();
-        Quesos = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        lblQuesoSinLactosa = new javax.swing.JLabel();
-        lblPrecioQuesoSinLactosa = new javax.swing.JLabel();
-        btnAñadirQuesoSNL = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        cbQuesoSNL = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
-        cbq2 = new javax.swing.JComboBox<>();
-        bq2 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        cbq3 = new javax.swing.JComboBox<>();
-        bq3 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        cbq4 = new javax.swing.JComboBox<>();
-        bq4 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtQuesoSinLactosa = new javax.swing.JTextArea();
-        lblTituloQuesoSinLactosa = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
         ScrollPaneaccesorios = new javax.swing.JScrollPane();
         accesorios = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
@@ -136,6 +107,37 @@ public class ventana_principal extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
         jTextArea11 = new javax.swing.JTextArea();
+        ScrollPanequesos = new javax.swing.JScrollPane();
+        Quesos = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        lblQuesoSinLactosa = new javax.swing.JLabel();
+        lblPrecioQuesoSinLactosa = new javax.swing.JLabel();
+        btnAñadirQuesoSNL = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        cbQuesoSNL = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        cbq2 = new javax.swing.JComboBox<>();
+        bq2 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        cbq3 = new javax.swing.JComboBox<>();
+        bq3 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        cbq4 = new javax.swing.JComboBox<>();
+        bq4 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtQuesoSinLactosa = new javax.swing.JTextArea();
+        lblTituloQuesoSinLactosa = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
         lblQuesabor = new javax.swing.JLabel();
         Lbltotal = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -144,6 +146,7 @@ public class ventana_principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         carrito.setBackground(new java.awt.Color(245, 242, 242));
         carrito.setFont(new java.awt.Font("Gill Sans MT Condensed", 0, 18)); // NOI18N
@@ -155,257 +158,14 @@ public class ventana_principal extends javax.swing.JFrame {
                 carritoActionPerformed(evt);
             }
         });
-
-        Quesos.setBackground(new java.awt.Color(255, 255, 255));
-
-        lblQuesoSinLactosa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1.jpg"))); // NOI18N
-
-        lblPrecioQuesoSinLactosa.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        lblPrecioQuesoSinLactosa.setForeground(new java.awt.Color(153, 153, 0));
-        lblPrecioQuesoSinLactosa.setText("$176.00 MX");
-
-        btnAñadirQuesoSNL.setBackground(new java.awt.Color(153, 153, 0));
-        btnAñadirQuesoSNL.setForeground(new java.awt.Color(255, 255, 255));
-        btnAñadirQuesoSNL.setText("Añadir");
-        btnAñadirQuesoSNL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAñadirQuesoSNLActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/2.jpg"))); // NOI18N
-
-        cbQuesoSNL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel10.setText("$184.00 MX");
-
-        cbq2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-
-        bq2.setBackground(new java.awt.Color(153, 153, 0));
-        bq2.setForeground(new java.awt.Color(255, 255, 255));
-        bq2.setText("Añadir");
-        bq2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bq2ActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/3.jpg"))); // NOI18N
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel12.setText("$90.00 MX");
-
-        cbq3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-
-        bq3.setBackground(new java.awt.Color(153, 153, 0));
-        bq3.setForeground(new java.awt.Color(255, 255, 255));
-        bq3.setText("Añadir");
-        bq3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bq3ActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/4.jpg"))); // NOI18N
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(153, 153, 0));
-        jLabel14.setText("$144.00 MX");
-
-        cbq4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-        cbq4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbq4ActionPerformed(evt);
-            }
-        });
-
-        bq4.setBackground(new java.awt.Color(153, 153, 0));
-        bq4.setForeground(new java.awt.Color(255, 255, 255));
-        bq4.setText("Añadir");
-        bq4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bq4ActionPerformed(evt);
-            }
-        });
-
-        txtQuesoSinLactosa.setColumns(20);
-        txtQuesoSinLactosa.setRows(5);
-        txtQuesoSinLactosa.setText("Perfecto para intolerantes  a la lactosa que le gustan los \nquesos suaves,pero con sabor. Se enviara un regalo, \nuna quesea reutilizable en todo los pedidos que \ncontengan un producto sin lactosa");
-        txtQuesoSinLactosa.setBorder(null);
-        jScrollPane2.setViewportView(txtQuesoSinLactosa);
-
-        lblTituloQuesoSinLactosa.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        lblTituloQuesoSinLactosa.setText("Queso de Oveja tierno sin lactosa ");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Queso  tierno con leche pasteurizada y sin lactosa .  \nTotalmente natural y con todo el sabor .Se enviara un \nregalo, una quesea reutilizable en todo los pedidos que \ncontengan un producto sin lactosa");
-        jScrollPane3.setViewportView(jTextArea1);
-
-        jLabel8.setText("Queso de oveja tierno sin lactosa con pimienta rosa");
-
-        jLabel29.setText("Requeson");
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Quien iba a decir que el suero resultante del queso \npodria salir de esta delicia??\nel requeson se deriva del suero lactico y solo podemos \ndecir una cosa , Esta buenisimo!!.\nsin nungun tipo de procesado ,sin conservantes , \nsin secretos , es un requeso natural , como el de toda la \nvida  ");
-        jScrollPane4.setViewportView(jTextArea2);
-
-        jLabel7.setText("Queso de Oveja tierno en Aceite Quesalado");
-
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Date un capricho con este tarro de queso tierno cortado \n en dados con acite de oliva virgen extraña. Cien gramos \nde queso pensados para comerlos en familia y amigos \n,envasadi en el tarro de cristal. \nSin complicaciones, solo abrir y servir.\nDura 2 meses ,Formato de 100g ");
-        jScrollPane5.setViewportView(jTextArea3);
-
-        javax.swing.GroupLayout QuesosLayout = new javax.swing.GroupLayout(Quesos);
-        Quesos.setLayout(QuesosLayout);
-        QuesosLayout.setHorizontalGroup(
-            QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(QuesosLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(QuesosLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addContainerGap(986, Short.MAX_VALUE))
-                    .addGroup(QuesosLayout.createSequentialGroup()
-                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(QuesosLayout.createSequentialGroup()
-                                    .addGap(2, 2, 2)
-                                    .addComponent(lblQuesoSinLactosa, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(QuesosLayout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jScrollPane2))
-                                        .addGroup(QuesosLayout.createSequentialGroup()
-                                            .addGap(19, 19, 19)
-                                            .addComponent(lblTituloQuesoSinLactosa, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, Short.MAX_VALUE))))
-                                .addGroup(QuesosLayout.createSequentialGroup()
-                                    .addGap(0, 0, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(QuesosLayout.createSequentialGroup()
-                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(QuesosLayout.createSequentialGroup()
-                                        .addGap(28, 28, 28)
-                                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(QuesosLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(QuesosLayout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(QuesosLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPrecioQuesoSinLactosa)
-                            .addComponent(cbQuesoSNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)
-                            .addComponent(cbq2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14)
-                            .addComponent(cbq4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bq4)
-                            .addComponent(btnAñadirQuesoSNL)
-                            .addComponent(bq2)
-                            .addGroup(QuesosLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(cbq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel12)
-                            .addComponent(bq3))
-                        .addGap(402, 402, Short.MAX_VALUE))))
-        );
-        QuesosLayout.setVerticalGroup(
-            QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(QuesosLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jLabel6)
-                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(QuesosLayout.createSequentialGroup()
-                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(QuesosLayout.createSequentialGroup()
-                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(QuesosLayout.createSequentialGroup()
-                                        .addGap(57, 57, 57)
-                                        .addComponent(lblPrecioQuesoSinLactosa)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cbQuesoSNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(19, 19, 19)
-                                        .addComponent(btnAñadirQuesoSNL))
-                                    .addGroup(QuesosLayout.createSequentialGroup()
-                                        .addGap(31, 31, 31)
-                                        .addComponent(lblTituloQuesoSinLactosa)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(75, 75, 75)
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(QuesosLayout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbq2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(bq2))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(QuesosLayout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(lblQuesoSinLactosa)
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel9)))
-                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(QuesosLayout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(jLabel11))
-                            .addGroup(QuesosLayout.createSequentialGroup()
-                                .addGap(91, 91, 91)
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(bq3))))
-                    .addGroup(QuesosLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(QuesosLayout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbq4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(bq4)
-                                .addGap(33, 33, 33)))))
-                .addGap(102, 102, 102))
-        );
-
-        ScrollPanequesos.setViewportView(Quesos);
-
-        opciones.addTab("Quesos", ScrollPanequesos);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(58, 7, 0, 0);
+        getContentPane().add(carrito, gridBagConstraints);
 
         accesorios.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -900,18 +660,306 @@ public class ventana_principal extends javax.swing.JFrame {
 
         opciones.addTab("Alacena", ScrollPane_alacena);
 
+        Quesos.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblQuesoSinLactosa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1.jpg"))); // NOI18N
+
+        lblPrecioQuesoSinLactosa.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        lblPrecioQuesoSinLactosa.setForeground(new java.awt.Color(153, 153, 0));
+        lblPrecioQuesoSinLactosa.setText("$176.00 MX");
+
+        btnAñadirQuesoSNL.setBackground(new java.awt.Color(153, 153, 0));
+        btnAñadirQuesoSNL.setForeground(new java.awt.Color(255, 255, 255));
+        btnAñadirQuesoSNL.setText("Añadir");
+        btnAñadirQuesoSNL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAñadirQuesoSNLActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/2.jpg"))); // NOI18N
+
+        cbQuesoSNL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel10.setText("$184.00 MX");
+
+        cbq2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+
+        bq2.setBackground(new java.awt.Color(153, 153, 0));
+        bq2.setForeground(new java.awt.Color(255, 255, 255));
+        bq2.setText("Añadir");
+        bq2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bq2ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/3.jpg"))); // NOI18N
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel12.setText("$90.00 MX");
+
+        cbq3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+
+        bq3.setBackground(new java.awt.Color(153, 153, 0));
+        bq3.setForeground(new java.awt.Color(255, 255, 255));
+        bq3.setText("Añadir");
+        bq3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bq3ActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/4.jpg"))); // NOI18N
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel14.setText("$144.00 MX");
+
+        cbq4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        cbq4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbq4ActionPerformed(evt);
+            }
+        });
+
+        bq4.setBackground(new java.awt.Color(153, 153, 0));
+        bq4.setForeground(new java.awt.Color(255, 255, 255));
+        bq4.setText("Añadir");
+        bq4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bq4ActionPerformed(evt);
+            }
+        });
+
+        txtQuesoSinLactosa.setColumns(20);
+        txtQuesoSinLactosa.setRows(5);
+        txtQuesoSinLactosa.setText("Perfecto para intolerantes  a la lactosa que le gustan los \nquesos suaves,pero con sabor. Se enviara un regalo, \nuna quesea reutilizable en todo los pedidos que \ncontengan un producto sin lactosa");
+        txtQuesoSinLactosa.setBorder(null);
+        jScrollPane2.setViewportView(txtQuesoSinLactosa);
+
+        lblTituloQuesoSinLactosa.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        lblTituloQuesoSinLactosa.setText("Queso de Oveja tierno sin lactosa ");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Queso  tierno con leche pasteurizada y sin lactosa .  \nTotalmente natural y con todo el sabor .Se enviara un \nregalo, una quesea reutilizable en todo los pedidos que \ncontengan un producto sin lactosa");
+        jScrollPane3.setViewportView(jTextArea1);
+
+        jLabel8.setText("Queso de oveja tierno sin lactosa con pimienta rosa");
+
+        jLabel29.setText("Requeson");
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Quien iba a decir que el suero resultante del queso \npodria salir de esta delicia??\nel requeson se deriva del suero lactico y solo podemos \ndecir una cosa , Esta buenisimo!!.\nsin nungun tipo de procesado ,sin conservantes , \nsin secretos , es un requeso natural , como el de toda la \nvida  ");
+        jScrollPane4.setViewportView(jTextArea2);
+
+        jLabel7.setText("Queso de Oveja tierno en Aceite Quesalado");
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jTextArea3.setText("Date un capricho con este tarro de queso tierno cortado \n en dados con acite de oliva virgen extraña. Cien gramos \nde queso pensados para comerlos en familia y amigos \n,envasadi en el tarro de cristal. \nSin complicaciones, solo abrir y servir.\nDura 2 meses ,Formato de 100g ");
+        jScrollPane5.setViewportView(jTextArea3);
+
+        javax.swing.GroupLayout QuesosLayout = new javax.swing.GroupLayout(Quesos);
+        Quesos.setLayout(QuesosLayout);
+        QuesosLayout.setHorizontalGroup(
+            QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(QuesosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(QuesosLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel6)
+                        .addContainerGap(999, Short.MAX_VALUE))
+                    .addGroup(QuesosLayout.createSequentialGroup()
+                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, QuesosLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(lblQuesoSinLactosa, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane2))
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addComponent(lblTituloQuesoSinLactosa, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(0, 5, Short.MAX_VALUE)
+                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(QuesosLayout.createSequentialGroup()
+                                                .addGap(28, 28, 28)
+                                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(QuesosLayout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(QuesosLayout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
+                                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(QuesosLayout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addGap(18, 18, 18)
+                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPrecioQuesoSinLactosa)
+                            .addComponent(cbQuesoSNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(cbq2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)
+                            .addComponent(cbq4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bq4)
+                            .addComponent(btnAñadirQuesoSNL)
+                            .addComponent(bq2)
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(cbq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12)
+                            .addComponent(bq3))
+                        .addGap(418, 418, Short.MAX_VALUE))))
+        );
+        QuesosLayout.setVerticalGroup(
+            QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(QuesosLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jLabel6)
+                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(QuesosLayout.createSequentialGroup()
+                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(57, 57, 57)
+                                        .addComponent(lblPrecioQuesoSinLactosa)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbQuesoSNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(19, 19, 19)
+                                        .addComponent(btnAñadirQuesoSNL))
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(lblTituloQuesoSinLactosa)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(75, 75, 75)
+                                .addComponent(jLabel8)
+                                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(QuesosLayout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbq2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(bq2))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
+                                        .addGap(4, 4, 4)
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(lblQuesoSinLactosa)
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel9)))
+                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel11))
+                            .addGroup(QuesosLayout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(bq3))))
+                    .addGroup(QuesosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(QuesosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                        .addGroup(QuesosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, QuesosLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbq4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bq4)
+                                .addGap(33, 33, 33)))
+                        .addGap(102, 102, 102))
+                    .addGroup(QuesosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+        );
+
+        ScrollPanequesos.setViewportView(Quesos);
+
+        opciones.addTab("Quesos", ScrollPanequesos);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.ipadx = 658;
+        gridBagConstraints.ipady = 817;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(7, 12, 12, 0);
+        getContentPane().add(opciones, gridBagConstraints);
+
         lblQuesabor.setFont(new java.awt.Font("Myanmar Text", 1, 36)); // NOI18N
         lblQuesabor.setForeground(new java.awt.Color(153, 153, 0));
         lblQuesabor.setText("QUE SABOR.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 48;
+        gridBagConstraints.ipady = -20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(13, 12, 0, 0);
+        getContentPane().add(lblQuesabor, gridBagConstraints);
 
         Lbltotal.setBackground(new java.awt.Color(153, 153, 0));
         Lbltotal.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         Lbltotal.setForeground(new java.awt.Color(255, 255, 255));
         Lbltotal.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 123;
+        gridBagConstraints.ipady = 32;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 7, 0, 0);
+        getContentPane().add(Lbltotal, gridBagConstraints);
 
         jLabel30.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(153, 153, 0));
         jLabel30.setText("Total:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 7, 0, 0);
+        getContentPane().add(jLabel30, gridBagConstraints);
 
         table_ticket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -938,52 +986,18 @@ public class ventana_principal extends javax.swing.JFrame {
             table_ticket.getColumnModel().getColumn(3).setPreferredWidth(60);
         }
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblQuesabor, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Lbltotal, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 183, Short.MAX_VALUE)))
-                                .addContainerGap())
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(carrito)
-                                .addGap(35, 35, 35))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblQuesabor, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(carrito)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel30)
-                    .addComponent(Lbltotal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 357;
+        gridBagConstraints.ipady = 790;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(18, 7, 0, 12);
+        getContentPane().add(jScrollPane1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1137,33 +1151,30 @@ public class ventana_principal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+       /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * Fosr details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            UIManager.setLookAndFeel("  com.jtattoo.plaf.acryl.AcrylLookAndFeel " );
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+           // java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            //java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            //java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            //java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
+        
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ventana_principal().setVisible(true);
+               
             }
         });
     }
